@@ -55,5 +55,20 @@ public List<Vaga> read(){
 
 }
 
-
+    public void delete (Vaga v){
+       Connection con = ConnectionFactory.getConnection ();
+       PreparedStatement stmt = null;
+       
+            try{
+            stmt = con.prepareStatement ("DELETE FROM vaga WHERE idVaga=?");
+            stmt.setInt(1, v.getIdVaga ());
+            stmt.executeUpdate();
+            
+            JOptionPane.showMessageDialog (null, "Vaga excluída com sucesso!");
+            }catch(SQLException e){
+            JOptionPane.showMessageDialog (null, "Erro ao excluir: " + e);
+            }finally{
+            ConnectionFactory.closeConnection(con, stmt);
+            }
+}
 }
