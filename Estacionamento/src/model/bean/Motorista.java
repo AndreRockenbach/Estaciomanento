@@ -19,20 +19,7 @@ public class Motorista {
     private String email;
     private String senha;
 
-    public Motorista(int idMotorista, String nomeCompleto, String genero, String rg, String cpf, String celular, String email, String senha) {
-        this.idMotorista = idMotorista;
-        this.nomeCompleto = nomeCompleto;
-        this.genero = genero;
-        this.rg = rg;
-        this.cpf = cpf;
-        this.celular = celular;
-        this.email = email;
-        this.senha = senha;
-
-
-
-
-    }
+   
 
     public int getIdMotorista() {
         return idMotorista;
