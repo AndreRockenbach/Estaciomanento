@@ -11,14 +11,15 @@ import model.dao.VagaDAO;
  * @author andre
  */
 public class JFAtualizarVaga extends javax.swing.JFrame {
-
+      private static int idVaga;
+      
     /**
      * Creates new form JFAtualizarVaga
      */
     public JFAtualizarVaga(int idVaga) {
         initComponents();
         VagaDAO vdao = new VagaDAO();
-        Vaga v = vdao.read (idVaga);
+        Vaga v = vdao.read(idVaga);
         lblIdVaga.setText(String.valueOf(v.getIdVaga()));
         jTFNumero.setText(String.valueOf(v.getNumero()));
         jTFRua.setText (v.getRua());
@@ -26,9 +27,6 @@ public class JFAtualizarVaga extends javax.swing.JFrame {
           jRBObliqua.setSelected (true);
         }else if (v.isObliqua() ==false){
           jRBParalela.setSelected (true);
-
-
-   
 }             
     }
 
@@ -200,8 +198,17 @@ public class JFAtualizarVaga extends javax.swing.JFrame {
     }//GEN-LAST:event_jRBParalelaActionPerformed
 
     private void jBtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSalvarActionPerformed
-      
-        // TODO add your handling code here:
+        Vaga v = new Vaga();
+        VagaDAO vdao = new VagaDAO();
+        v.setIdVaga (Integer.parseInt (lblIdVaga.getText()));
+        v.setNumero(Integer.parseInt (jTFNumero.getText()));
+        v.setRua(jTFRua.getText());
+        if (jRBObliqua.isSelected()){
+          v.setObliqua(true); 
+        }else if(jRBParalela.isSelected()){
+          v.setObliqua(false);
+        }
+        vdao.update(v);
     }//GEN-LAST:event_jBtnSalvarActionPerformed
 
     private void jTFNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFNumeroActionPerformed
@@ -238,9 +245,11 @@ public class JFAtualizarVaga extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFAtualizarVaga().setVisible(true);
+                JFAtualizarVaga frame = new JFAtualizarVaga(idVaga);
+                frame.setVisible(true);
             }
         });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -259,4 +268,6 @@ public class JFAtualizarVaga extends javax.swing.JFrame {
     private javax.swing.JTextField jTFRua;
     private javax.swing.JLabel lblIdVaga;
     // End of variables declaration//GEN-END:variables
+
 }
+
