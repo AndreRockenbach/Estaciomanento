@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model.bean;
 
-/**
- *
- * @author andre
- */
 public class Motorista {
 
     private int idMotorista;
@@ -18,8 +10,6 @@ public class Motorista {
     private String celular;
     private String email;
     private String senha;
-
-   
 
     public int getIdMotorista() {
         return idMotorista;
@@ -84,14 +74,5 @@ public class Motorista {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-
-
-
-
-
-
-
-
-
 
 }

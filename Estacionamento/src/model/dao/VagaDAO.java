@@ -46,10 +46,10 @@ public List<Vaga> read(){
          v.setObliqua (rs.getBoolean ("obliqua"));
          vagas.add (v);
      }
-}catch (SQLException e){
-    throw new RuntimeException ("Erro ao buscar os dados: ", e);   
-}finally{
-    ConnectionFactory.closeConnection (con, stmt, rs);
+     }catch (SQLException e){
+         throw new RuntimeException ("Erro ao buscar os dados: ", e);   
+    }finally{
+         ConnectionFactory.closeConnection (con, stmt, rs);
     }
     return vagas;
 
