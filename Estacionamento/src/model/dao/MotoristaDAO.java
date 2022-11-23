@@ -47,6 +47,7 @@ public List<Motorista> read(){
      rs = stmt.executeQuery();
      while (rs.next()){
          Motorista m = new Motorista();
+         m.setIdMotorista(rs.getInt("IdMotorista"));
          m.setNomeCompleto (rs.getString ("NomeCompleto"));
          m.setGenero (rs.getString ("Genero"));
          m.setRg (rs.getString ("Rg"));
@@ -71,7 +72,7 @@ public List<Motorista> read(){
        PreparedStatement stmt = null;
        
             try{
-            stmt = con.prepareStatement ("DELETE FROM vaga WHERE idMotorista=?");
+            stmt = con.prepareStatement ("DELETE FROM motorista WHERE IdMotorista=?");
             stmt.setInt(1, m.getIdMotorista ());
             stmt.executeUpdate();
             
@@ -89,10 +90,11 @@ public List<Motorista> read(){
         ResultSet rs = null;
         Motorista m = new Motorista ();
             try{
-              stmt = con.prepareStatement ("SELECT * FROM vaga WHERE idMotorista=? LIMIT 1;");
+              stmt = con.prepareStatement ("SELECT * FROM motorista WHERE IdMotorista=? LIMIT 1;");
               stmt.setInt (1, idMotorista);
               rs = stmt.executeQuery();
               if (rs != null && rs.next()){
+                  m.setIdMotorista(rs.getInt("IdMotorista"));
                   m.setNomeCompleto (rs.getString ("NomeCompleto"));
                   m.setGenero (rs.getString ("Genero"));
                   m.setRg (rs.getString ("Rg"));
