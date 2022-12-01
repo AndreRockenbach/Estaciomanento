@@ -39,7 +39,8 @@ public class JFAtualizarVaga extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         lblIdVaga = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("AtualizarVaga");
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(139, 69, 19));
@@ -90,10 +91,20 @@ public class JFAtualizarVaga extends javax.swing.JFrame {
         jBtnCancelar.setBackground(new java.awt.Color(255, 140, 0));
         jBtnCancelar.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
         jBtnCancelar.setText("Cancelar");
+        jBtnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnCancelarActionPerformed(evt);
+            }
+        });
 
         jBtnLimpar.setBackground(new java.awt.Color(30, 144, 255));
         jBtnLimpar.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
         jBtnLimpar.setText("Limpar");
+        jBtnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnLimparActionPerformed(evt);
+            }
+        });
 
         jBtnSalvar.setBackground(new java.awt.Color(50, 205, 50));
         jBtnSalvar.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
@@ -212,11 +223,24 @@ public class JFAtualizarVaga extends javax.swing.JFrame {
           v.setObliqua(false);
         }
         vdao.update(v);
+        
     }//GEN-LAST:event_jBtnSalvarActionPerformed
 
     private void jTFNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFNumeroActionPerformed
         
     }//GEN-LAST:event_jTFNumeroActionPerformed
+
+    private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
+        // TODO add your handling code here:
+       dispose();
+    }//GEN-LAST:event_jBtnCancelarActionPerformed
+
+    private void jBtnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnLimparActionPerformed
+        // TODO add your handling code here:
+        jTFRua.setText ("");
+        jTFNumero.setText("");
+        bGTipoVaga.clearSelection();
+    }//GEN-LAST:event_jBtnLimparActionPerformed
 
     
     public static void main(String args[]) {

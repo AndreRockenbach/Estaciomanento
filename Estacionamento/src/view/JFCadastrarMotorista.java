@@ -47,7 +47,8 @@ public class JFCadastrarMotorista extends javax.swing.JFrame {
 
         jLabel12.setText("jLabel12");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("CadastrarMotorista");
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(72, 61, 139));
@@ -74,6 +75,11 @@ public class JFCadastrarMotorista extends javax.swing.JFrame {
         jBtnCancelar.setBackground(new java.awt.Color(255, 140, 0));
         jBtnCancelar.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
         jBtnCancelar.setLabel("Cancelar");
+        jBtnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnCancelarActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(72, 61, 139));
@@ -230,7 +236,8 @@ public class JFCadastrarMotorista extends javax.swing.JFrame {
          m.setNomeCompleto(jTFNomecompleto.getText());
          m.setRg(jTFRg.getText());
          m.setSenha(jTFSenha.getText());
-         mdao.create(m);  
+         mdao.create(m); 
+         
     
     }//GEN-LAST:event_jBtnSalvarActionPerformed
 
@@ -243,8 +250,20 @@ public class JFCadastrarMotorista extends javax.swing.JFrame {
     }//GEN-LAST:event_jTFSenhaActionPerformed
 
     private void jBtnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnLimparActionPerformed
-        
+             jTFCelular.setText ("");
+             jTFCpf.setText ("");
+             jTFEmail.setText ("");
+             jTFGenero.setText ("");
+             jTFNomecompleto.setText ("");
+             jTFRg.setText ("");
+             jTFSenha.setText ("");
+         
     }//GEN-LAST:event_jBtnLimparActionPerformed
+
+    private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
+        // TODO add your handling code here:
+dispose();
+    }//GEN-LAST:event_jBtnCancelarActionPerformed
 
     
     public static void main(String args[]) {

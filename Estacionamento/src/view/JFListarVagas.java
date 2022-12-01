@@ -23,7 +23,8 @@ public class JFListarVagas extends javax.swing.JFrame {
         jBtnCadastrar = new javax.swing.JButton();
         jBtnExcluir = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("ListarVagas");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -67,6 +68,11 @@ public class JFListarVagas extends javax.swing.JFrame {
         jBtnCadastrar.setBackground(new java.awt.Color(50, 205, 50));
         jBtnCadastrar.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
         jBtnCadastrar.setText("Cadastrar Vaga");
+        jBtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnCadastrarActionPerformed(evt);
+            }
+        });
 
         jBtnExcluir.setBackground(new java.awt.Color(255, 140, 0));
         jBtnExcluir.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
@@ -134,6 +140,7 @@ public class JFListarVagas extends javax.swing.JFrame {
               JOptionPane.showMessageDialog (null, "Selecione uma vaga!", "Erro", JOptionPane.ERROR_MESSAGE);
          } 
         readJTable();
+        
     }//GEN-LAST:event_jBtnExcluirActionPerformed
 
     private void jBtnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnEditarActionPerformed
@@ -145,7 +152,15 @@ public class JFListarVagas extends javax.swing.JFrame {
             JOptionPane.showMessageDialog (null, "Selecione uma vaga!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
        readJTable();
+       dispose();
     }//GEN-LAST:event_jBtnEditarActionPerformed
+
+    private void jBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCadastrarActionPerformed
+        // TODO add your handling code here:
+       JFCadastrarVaga cv = new JFCadastrarVaga();
+       cv.setVisible(true);
+       
+    }//GEN-LAST:event_jBtnCadastrarActionPerformed
 
     public void readJTable(){
         DefaultTableModel modelo = (DefaultTableModel) jTVaga.getModel ();

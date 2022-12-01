@@ -61,7 +61,8 @@ public class JFAtualizarMotorista extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(72, 61, 139));
         jLabel10.setText("Celular");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("AtualizarMotorista");
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(139, 69, 19));
@@ -120,6 +121,11 @@ public class JFAtualizarMotorista extends javax.swing.JFrame {
         jBtnCancelar.setBackground(new java.awt.Color(255, 140, 0));
         jBtnCancelar.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
         jBtnCancelar.setText("Cancelar");
+        jBtnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnCancelarActionPerformed(evt);
+            }
+        });
 
         jTFCpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -253,11 +259,11 @@ public class JFAtualizarMotorista extends javax.swing.JFrame {
         m.setSenha(jTFSenha.getText());
         
         mdao.update(m);
-      
+        
     }//GEN-LAST:event_jBtnSalvarActionPerformed
 
     private void jBtnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnLimparActionPerformed
-        
+                 
     }//GEN-LAST:event_jBtnLimparActionPerformed
 
     private void jTFCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFCpfActionPerformed
@@ -271,6 +277,16 @@ public class JFAtualizarMotorista extends javax.swing.JFrame {
     private void jTFGeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFGeneroActionPerformed
         
     }//GEN-LAST:event_jTFGeneroActionPerformed
+
+    private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
+          jTFCelular.setText ("");
+             jTFCpf.setText ("");
+             jTFEmail.setText ("");
+             jTFGenero.setText ("");
+             jTFNomecompleto.setText ("");
+             jTFRg.setText ("");
+             jTFSenha.setText ("");
+    }//GEN-LAST:event_jBtnCancelarActionPerformed
 
     
     public static void main(String args[]) {

@@ -47,7 +47,8 @@ public class JFListarMotorista extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("ListarMotorista");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
@@ -147,7 +148,9 @@ public class JFListarMotorista extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCadastrarActionPerformed
-
+        JFCadastrarMotorista cm = new JFCadastrarMotorista();
+        cm.setVisible(true);
+        
     }//GEN-LAST:event_jBtnCadastrarActionPerformed
 
     private void jBtnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnEditarActionPerformed
@@ -159,6 +162,7 @@ public class JFListarMotorista extends javax.swing.JFrame {
             JOptionPane.showMessageDialog (null, "Selecione uma motorista!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
        readJTable();
+       
     }//GEN-LAST:event_jBtnEditarActionPerformed
 
     private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
@@ -175,6 +179,7 @@ public class JFListarMotorista extends javax.swing.JFrame {
               JOptionPane.showMessageDialog (null, "Selecione uma motorista!", "Erro", JOptionPane.ERROR_MESSAGE);
          } 
         readJTable();
+        dispose();
     }//GEN-LAST:event_jBtnExcluirActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
